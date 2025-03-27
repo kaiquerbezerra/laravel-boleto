@@ -153,6 +153,13 @@ abstract class AbstractBoleto implements BoletoContract
     public $dataDesconto;
 
     /**
+     * Data de limite de recebimento
+     *
+     * @var Carbon
+     */
+    protected $dataLimiteParaRecebimento;
+
+    /**
      * Campo de aceite
      *
      * @var string
@@ -753,6 +760,30 @@ abstract class AbstractBoleto implements BoletoContract
     public function getDataDesconto()
     {
         return $this->dataDesconto;
+    }
+
+    /**
+     * Define a data de limite de recebimento
+     *
+     * @param Carbon $dataLimiteParaRecebimento
+     * 
+     * @return AbstractBoleto
+     */
+    public function setDataLimiteParaRecebimento(Carbon $dataLimiteParaRecebimento)
+    {
+        $this->dataLimiteParaRecebimento = $dataLimiteParaRecebimento;
+
+        return $this;
+    }
+
+    /**
+     * Retorna a data de limite de recebimento
+     *
+     * @return Carbon
+     */
+    public function getDataLimiteParaRecebimento()
+    {
+        return $this->dataLimiteParaRecebimento;
     }
 
     /**
